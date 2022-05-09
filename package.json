@@ -3,16 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o",
-    "build": "ng build"
+    "start": "node server.js",
+    "build": "ng build",
+    "deploy": "git push origin dev && git push heroku dev"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.1.0",
     "@angular/cli": "~13.1.4",
-    "@angular/compiler-cli": "~13.1.0",
     "@angular/common": "~13.1.0",
     "@angular/compiler": "~13.1.0",
+    "@angular/compiler-cli": "~13.1.0",
     "@angular/core": "~13.1.0",
     "@angular/forms": "~13.1.0",
     "@angular/platform-browser": "~13.1.0",
@@ -22,6 +23,7 @@
     "@taiga-ui/core": "^2.43.0",
     "@taiga-ui/icons": "^2.43.0",
     "@taiga-ui/kit": "^2.43.0",
+    "express": "^4.18.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -31,5 +33,9 @@
     "@types/node": "^12.20.50",
     "angular-cli-ghpages": "^1.0.0",
     "typescript": "~4.5.2"
+  },
+  "engines": {
+    "node": "16.13.2",
+    "npm": "8.1.2"
   }
 }
