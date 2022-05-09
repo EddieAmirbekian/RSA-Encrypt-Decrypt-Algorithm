@@ -10,11 +10,11 @@ export class AppComponent {
 
   rsaBitOpen = true;
 
-  publicKey: `(${number}, ${number})` | null = null;
-  privateKey: `(${number}, ${number})` | null = null;
+  publicKey: string | null = null;
+  privateKey: string | null = null;
 
-  toEncode: string = '';
-  toDecode: string = '';
+  toEncode: number = 0;
+  toDecode: number = 0;
 
   encodeResult: string = '';
   decodeResult: string = '';
@@ -46,7 +46,7 @@ export class AppComponent {
 
   encode(): void {
     if (this.toEncode && this.e && this.n) {
-      this.encodeResult = modularExp(+this.toEncode, this.e, this.n).toString();
+      this.encodeResult = modularExp(this.toEncode, this.e, this.n).toString();
     } else {
       alert('Գեներացրեք բանալիները');
     }
@@ -54,7 +54,7 @@ export class AppComponent {
 
   decode() {
     if (this.toDecode && this.d && this.n) {
-      this.decodeResult = modularExp(+this.toDecode, this.d, this.n).toString();
+      this.decodeResult = modularExp(this.toDecode, this.d, this.n).toString();
     } else {
       alert('Գեներացրեք բանալիները');
     }
